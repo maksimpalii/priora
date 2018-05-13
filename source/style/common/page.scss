@@ -1,0 +1,117 @@
+#block_header {
+  background-image: url(/assets/img/block1.jpg);
+  background-repeat: no-repeat;
+  background-position: top center;
+  padding: 100px 0 100px 0;
+  min-height: 568px;
+}
+
+#block_header_img {
+  width: 480px;
+  height: 470px;
+  position: absolute;
+  left: -430px;
+}
+#block_header_img__inn{
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  & img{
+    position: absolute;
+    @include centered();
+  }
+}
+#block_header_img_dis{
+  position: absolute;
+  bottom: -15%;
+  left: -15%;
+}
+#block_header_content_dis{
+  position: absolute;
+  top: 5%;
+  left: -5%;
+  z-index: -1;
+}
+#block_header_content {
+  width: 360px;
+  float: right;
+  background: #ffffff;
+  padding: 50px 75px 50px 120px;
+  position: relative;
+  z-index: 1;
+  & h1 {
+    font-size: 43px;
+    color: #3e5884;
+    text-transform: uppercase;
+    margin-top: 10px;
+  }
+}
+
+#block_content {
+  & h2 {
+    font-size: 24px;
+    color: #f9aec5;
+    margin-top: 40px;
+    margin-bottom: 0px;
+  }
+  & p {
+    font-size: 17px;
+    color: #58595b;
+    line-height: 24px;
+  }
+  & blockquote {
+    margin: 50px 0;
+    width: 80%;
+    & p {
+      font-size: 17px;
+      color: #f9aec5;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+    & a {
+      text-decoration: none;
+      color: #3e5884;
+    }
+    &:before{
+      content: '';
+      display: block;
+      width: 102px;
+      height: 101px;
+      background-image: url('/assets/img/blockquote.png');
+      float: left;
+      margin-right: 25px;
+    }
+  }
+
+}
+
+#block_content_inn {
+  position: relative;
+  padding: 140px 0;
+}
+
+.head_txt {
+  font-size: 24px;
+  color: #295791;
+}
+
+.back {
+  color: #3e5884;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: 700;
+  border: 3px solid #b0ecff;
+  padding: 17px 45px;
+  border-radius: 35px;
+  display: flex;
+  width: fit-content;
+  &:before{
+    content: '';
+    display: block;
+    width: 10px;
+    height: 18px;
+    background-image: url('/assets/img/bef_link.png');
+    margin: -1px 20px 0 0;
+  }
+}
