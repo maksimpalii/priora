@@ -62,5 +62,56 @@ var preloader = (function () {
     }
 }());
 
-preloader.init();
+// preloader.init();
+
+
+var boxFlip = (function () {
+    var button = document.querySelector('.quest');
+    if (button !== null) {
+        $('.quest').click(function() {
+            $(this).parent().addClass('flipped');
+        });
+
+        $('.quest_close').click(function() {
+            console.log($(this).parent().parent());
+            $(this).parent().parent().removeClass('flipped');
+        });
+
+
+    }
+});
+
+boxFlip();
+
+$(window).scroll(function() {
+    var $height = $(window).scrollTop();
+    if($height > 50) {
+        $('#header').addClass('active');
+    } else {
+        $('#header').removeClass('active');
+    }
+});
+
+
+var vid = document.querySelector('#my_video_1');
+if (vid !== null) {
+
+    var myPlayer = videojs('my_video_1');
+}
+
+
+$('#icon_vid').click(function() {
+$('html, body').animate({
+    scrollTop: $("#block_video").offset().top
+}, 1000);
+    myPlayer.ready(function () {
+        if(myPlayer.paused()){
+            myPlayer.play();
+        }
+    })
+});
+
+
+
+
 

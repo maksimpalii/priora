@@ -1,14 +1,20 @@
 #header {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   z-index: 100;
+  transition: all 0.3s ease-in-out;
+  &.active {
+    background-color: #ffffff;
+  }
 }
-#header.fixed{
+
+#header.fixed {
   position: fixed;
   background: #ffffff;
 }
+
 #header_inn {
   display: flex;
   justify-content: space-between;
@@ -39,20 +45,23 @@
 #menu li a {
   text-decoration: none;
   color: #132e64;
+  transition: all 0.3s ease-in-out;
   &:after {
     content: '';
     display: block;
+    width: 100%;
+    height: 1px;
+    background: #f25042;
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
   }
-  &:hover{
+  &:hover {
     color: #f25042;
     &:after {
-      width: 100%;
-      height: 1px;
-      background: #f25042;
+      opacity: 1;
     }
   }
 }
-
 
 #menu .current-menu-item a {
   color: #f25042;
@@ -60,6 +69,7 @@
     width: 100%;
     height: 1px;
     background: #f25042;
+    opacity: 1;
   }
 }
 

@@ -1,0 +1,128 @@
+block content
+include header.pug
+
+#wrapper
+    #block_crem
+        #block_crem_inn.wrap
+            #block_crem_img
+                #img_crem_bl1
+                    img(src='/assets/img/tube.png')
+                    #img_crem_dis1
+                        img(src='/assets/img/crem_line_top.png')
+                    #img_crem_dis2
+                        img(src='/assets/img/grey_lips.png')
+                    #img_crem_dis3
+                        img(src='/assets/img/grey_lips.png')
+                    #img_crem_dis4
+                        img(src='/assets/img/grey_lips.png')
+            #block_crem_content
+                #cont_logo_crem
+                    img(src='/assets/img/logo.png')
+                h1 ПРИОРА ПРИ ПЕРВЫХ СИМПТОМАХ ГЕРПЕСА НА ГУБАХ
+                #block_crem_content__txt Крем <b>Приора</b> защищает клеточные мембраны и блокирует дальнейшее размножение вируса. При первых симптомах герпеса – зуде, покалывании, покраснении, жжении, раздражении или воспалении – воспользуйся <b>Приорой</b> и ускорь выздоровление.
+
+                #block_crem_buttons
+                    a.find(href='#')
+                        span Найти лучшую цену
+                #block_crem_dis2
+                    img(src='/assets/img/des_bl1.png')
+        .clear
+    #block_sost
+        #block_sost_inn.wrap
+            #block_sost_content
+                h2 Состав и механизм действия
+                #block_sost_img
+                    img(src='/assets/img/sost_img.png')
+                .txt
+                    p <b>Докозанол</b> – действующее вещество крема <b>Приора</b>, защищает мембраны клеток от проникновения вируса. Препарат не позволяет герпесу даже попасть внутрь клетки, не говоря уже о дальнейшем развитии и размножении.
+                    p <b>Поэтому при первых симптомах герпеса смело и уверенно применяй крем Приора!</b>
+                #block_sost_forvideo
+                    #icon_vid
+                        img(src='/assets/img/for_vid.png')
+                    .txt Посмотри видео и узнай, как крем <b>Приора</b> поможет ускорить выздоровление
+        .clear
+    #block_video
+        #block_video_inn.wrap
+            #block_video_cont
+                video#my_video_1.video-js.vjs-default-skin(width='1150px', height='647px', controls='', preload='none', poster='/assets/img/video_snapshot.jpg', data-setup='{ "aspectRatio":"1150:647", "playbackRates": [1, 1.5, 2] }')
+                    source(src='/assets/img/Priora_Rus_720x400_V2_3.mp4', type='video/mp4')
+                    source(src='https://vjs.zencdn.net/v/oceans.webm', type='video/webm')
+        .clear
+    #block_pokaz
+        #block_pokaz_inn.wrap
+            #block_pokaz_left
+                #block_pokaz_img
+                    #block_pokaz_img_inn
+                        img(src='/assets/img/pokaz_img.jpg')
+                    #pokaz_dis
+                        img(src='/assets/img/pokaz_dis.png')
+            #block_pokaz_right
+                ul
+                    li
+                        h3 Показания
+                        p Ранние стадии герпеса на губах у пациентов с нормальным иммунитетом (покраснение, зуд, жжение в области губ и в зоне около них)
+
+                    li
+                        h3 Способ применения
+                        p Наносите крем <b>Приора</b> тонким слоем на кожу при покалывании, зуде, покраснении каждые 3 часа. <b>Важно успеть это сделать еще до появления пузырьков.</b> Не наносите препарат на кожу вокруг глаз и избегайте попадания крема в глаза. После применения вымойте руки с мылом
+        .clear
+    #block_question
+        #block_question_inn.wrap
+            #block_stadii_items
+                .block_question_half
+                    .block_sts
+                        .quest
+                            img(src='/assets/img/q1.jpg')
+                            p <b>Где производят</b> Приору?
+                            .bgs_over_blue
+                        .answer
+                            .quest_close
+                            p В Великобритании.
+                            .bgs_over_blue
+                    .block_sts
+                        .quest
+                            img(src='/assets/img/q2.jpg')
+                            p <b>Как часто следует наносить Приору</b> для максимального результата?
+                            .bgs_over_yellow
+                        .answer
+                            .quest_close
+                            p Наносите крем каждые 3 часа тонким слоем на пораженный и граничащий с ним участок. Важно успеть начать лечение при первых симптомах!
+                            .bgs_over_yellow
+                    .block_sts
+                        .quest
+                            img(src='/assets/img/q3.jpg')
+                            p <b>Где можно приобрести</b> препарат?
+                            .bgs_over_teles
+                        .answer
+                            .quest_close
+                            p Купить Приору можно в аптеках без рецепта.
+                            .bgs_over_teles
+                    .block_sts
+                        .quest
+                            img(src='/assets/img/q4.jpg')
+                            p <b>Какой срок годности</b> открытого тюбика?
+                            .bgs_over_blue
+                        .answer
+                            .quest_close
+                            p 6 місяців
+                            .bgs_over_blue
+                .block_question_half
+                    .block_sts.sts_big
+                        .quest
+                            img(src='/assets/img/q5.jpg')
+                            p Когда начать использовать Приору  для максимального эффекта?
+                            .bgs_over_teles
+                        .answer
+                            .quest_close
+                            p Чтобы предотвратить появление пузырьков на губах, применяй Приору, как только почувствуете зуд или заметите малейшее покраснение на губах.
+                            .bgs_over_teles
+                #stadii_dis1
+                    img(src='/assets/img/icon_quest.png')
+                #stadii_dis2
+                    img(src='/assets/img/icon_quest.png')
+                #stadii_dis3
+                    img(src='/assets/img/icon_quest.png')
+        .clear
+    .clear-300
+
+include footer.pug
