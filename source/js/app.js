@@ -65,18 +65,37 @@ var preloader = (function () {
 
 
 var boxFlip = (function () {
-    var button = document.querySelector('.quest');
+    var button = document.querySelector('.block_sts');
     if (button !== null) {
-        $('.quest').click(function() {
-            $(this).parent().addClass('flipped');
+        CSSPlugin.defaultTransformPerspective = 1000;
+
+//we set the backface
+        TweenMax.set($(".answer"), {rotationY:-180});
+
+        $.each($(".block_sts"), function(i,element)
+        {
+            var frontCard = $(this).children("div.quest"),
+                backCard = $(this).children("div.answer"),
+                tl = new TimelineMax({paused:true});
+
+            tl
+                .to(frontCard, 0.6, {rotationY:180, ease:Linear.easeNone})
+                .to(backCard, 0.6, {rotationY:0, ease:Linear.easeNone},0);
+
+            element.animation = tl;
         });
 
-        $('.quest_close').click(function() {
-            console.log($(this).parent().parent());
-            $(this).parent().parent().removeClass('flipped');
+        var btn = $(".quest_close");
+
+        $(".quest").click(function()
+        {
+            this.parentElement.animation.play(0);
         });
 
-
+        btn.click(function()
+        {
+            this.parentElement.parentElement.animation.reverse();
+        });
     }
 });
 

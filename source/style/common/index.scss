@@ -264,14 +264,17 @@ margin-top: 0;
   font-family: Calibri;
   font-weight: 700;
   color: #f789a7;
-  background: linear-gradient(125deg, #fba1a0 0%, #f688a8 80%);;
+  background: none;
+  background: -webkit-linear-gradient(125deg, #fba1a0 0%, #f688a8 80%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+
   font-size: 405px;
   & span{
     font-size: 174px;
-    color: #fbc0a5;
-    background: linear-gradient(125deg, #fba1a0 0%, #f688a8 80%);;
+    color: #f789a7;
+    background: none;
+    background: -webkit-linear-gradient(125deg, #fba1a0 0%, #f688a8 80%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
