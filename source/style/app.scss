@@ -30,7 +30,9 @@ body {
   font-style: normal;
 
 }
-
+a{
+  text-decoration: none;
+}
 #wrapper {
   width: 100%;
   overflow: hidden;
@@ -59,7 +61,7 @@ body {
 @import 'common/page2';
 @import 'common/page3';
 @import 'common/page4';
-@import 'common/video';
+//@import 'common/video';
 @import 'common/footer';
 
 

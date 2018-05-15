@@ -39,7 +39,7 @@
 }
 
 #menu li {
-  padding-left: 30px;
+  padding: 5px 15px;
 }
 
 #menu li a {
@@ -73,3 +73,21 @@
   }
 }
 
+
+
+#menu {
+  .link_where {
+    background-color: #ffffff;
+    transition: all 0.3s ease-in-out;
+    & a{
+      &:hover {
+        &:after{
+          opacity: 0;
+        }
+      }
+    }
+  }
+}
+#header.active #menu .link_where {
+  background-image: url('/assets/img/link_where.jpg');
+}

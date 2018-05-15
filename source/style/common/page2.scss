@@ -3,6 +3,7 @@
   background-repeat: no-repeat;
   background-position: top center;
   padding: 140px 0 100px 0;
+  background-size: cover;
   & h2 {
     font-size: 43px;
     color: #3e5884;
@@ -25,13 +26,22 @@
     width: fit-content;
   }
 }
-
+#block_gerpes_inn{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 #block_stadii_inn {
   margin: 60px auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 #block_stadii_items {
   display: flex;
+  position: relative;
+  width: 100%;
 }
 
 #block_stadii {
@@ -78,6 +88,7 @@
     text-align: center;
     padding: 0 30px;
     z-index: 1;
+    display: inline-table;
   }
   & img {
     z-index: 1;
@@ -107,6 +118,8 @@
   height: 100%;
   background-color: rgba(154, 255, 253, 0.56);
   z-index: 0;
+  top:0;
+  left: 0;
 }
 
 .bg_over_yellow {
@@ -115,6 +128,8 @@
   height: 100%;
   background-color: rgba(248, 255, 130, 0.56);
   z-index: 0;
+  top:0;
+  left: 0;
 }
 
 .bg_over_teles {
@@ -123,6 +138,8 @@
   height: 100%;
   background-color: rgba(254, 217, 213, 0.56);
   z-index: 0;
+  top:0;
+  left: 0;
 }
 
 #block_stadii .find {
@@ -147,6 +164,7 @@
   }
   & .note{
     margin-top: 80px;
+    color: #bbbbbb;
   }
 }
 #img_block__inn{
@@ -158,6 +176,13 @@
   & img{
     position: absolute;
     @include centered();
+    width: 101%;
+    transition: all 0.5s ease-in-out;
+  }
+  &:hover{
+    & img{
+      width: 110%;
+    }
   }
 }
 #img_block__des1{

@@ -5,8 +5,7 @@ function getCookie(name) {
         "(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"
     ));
     return matches ? decodeURIComponent(matches[1]) : undefined;
-};
-
+}
 
 var preloader = (function () {
     var percentsTotal = 0;
@@ -33,7 +32,7 @@ var preloader = (function () {
         if (percents >= 100) {
             preloader.fadeOut();
         }
-    }
+    };
 
     var loadImages = function (images) {
 
@@ -52,7 +51,7 @@ var preloader = (function () {
             });
         });
 
-    }
+    };
     return {
         init: function () {
             var imgs = imgPath.toArray();
@@ -90,27 +89,87 @@ $(window).scroll(function() {
     } else {
         $('#header').removeClass('active');
     }
+    if($height > 700) {
+        $('#gotop').addClass('active');
+    } else {
+        $('#gotop').removeClass('active');
+    }
 });
 
+$(window).load(function() {
+    var $height = $(window).scrollTop();
+    if($height > 50) {
+        $('#header').addClass('active');
+    } else {
+        $('#header').removeClass('active');
+    }
+    if($height > 700) {
+        $('#gotop').addClass('active');
+    } else {
+        $('#gotop').removeClass('active');
+    }
+});
 
-var vid = document.querySelector('#my_video_1');
-if (vid !== null) {
+/* Video */
 
-    var myPlayer = videojs('my_video_1');
+
+var tag = document.createElement('script');
+
+tag.src = "https://www.youtube.com/iframe_api";
+var firstScriptTag = document.getElementsByTagName('script')[0];
+firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+// 3. This function creates an <iframe> (and YouTube player)
+//    after the API code downloads.
+var player;
+function onYouTubeIframeAPIReady() {
+    player = new YT.Player('player', {
+        height: '647',
+        width: '1150',
+        videoId: '611Yy41Rubg',
+        playerVars: { 'autoplay': 0, 'controls': 0 },
+        events: {
+            // 'onReady': onPlayerReady,
+            // 'onStateChange': onPlayerStateChange
+        }
+    });
 }
+
+// 4. The API will call this function when the video player is ready.
+// function onPlayerReady(event) {
+//     event.target.playVideo();
+// }
+
+// 5. The API calls this function when the player's state changes.
+//    The function indicates that when playing a video (state=1),
+//    the player should play for six seconds and then stop.
+var done = false;
+function onPlayerStateChange(event) {
+    if (event.data == YT.PlayerState.PLAYING && !done) {
+        setTimeout(stopVideo, 6000);
+        done = true;
+    }
+}
+function stopVideo() {
+    player.stopVideo();
+}
+
 
 
 $('#icon_vid').click(function() {
 $('html, body').animate({
     scrollTop: $("#block_video").offset().top
 }, 1000);
-    myPlayer.ready(function () {
-        if(myPlayer.paused()){
-            myPlayer.play();
-        }
-    })
+        player.playVideo();
+
 });
 
+
+$('#gotop').click(function() {
+    $('html, body').animate({
+        scrollTop: 0
+    }, 1000);
+});
 /* Menu vertical */
 
 var menuBlog = (function () {
@@ -137,13 +196,18 @@ var blogscontent = document.querySelector('.section-blog__content');
 
 if (blogscontent){
     var  menuOffsetTop = $('.section-blog__list').offset().top;
+    var  menuOffsetTop2 = $('#footer').offset().top - $('#footer').height();
     $(document).scroll(function () {
         if ($(document).scrollTop() >= (menuOffsetTop - 100) && $(window).width() > 753){
             $('.section-blog__list').addClass('fixed-position');
         } else {
             $('.section-blog__list').removeClass('fixed-position');
         }
-
+        if ($(document).scrollTop() >= menuOffsetTop2 - 200){
+            $('.section-blog__list').addClass('opacity');
+        } else {
+            $('.section-blog__list').removeClass('opacity');
+        }
 
         $(".section-blog__post").each(function () {
             if (($(document).scrollTop() - $(this).offset().top) >= -150){
@@ -165,6 +229,4 @@ if (blogscontent){
     });
 }
 menuBlog();
-
-
 

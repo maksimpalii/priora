@@ -22,7 +22,7 @@ include header.pug
                 #block_crem_content__txt Крем <b>Приора</b> защищает клеточные мембраны и блокирует дальнейшее размножение вируса. При первых симптомах герпеса – зуде, покалывании, покраснении, жжении, раздражении или воспалении – воспользуйся <b>Приорой</b> и ускорь выздоровление.
 
                 #block_crem_buttons
-                    a.find(href='#')
+                    a.find(href='https://geoapteka.com.ua/priora' target='_blank')
                         span Найти лучшую цену
                 #block_crem_dis2
                     img(src='/assets/img/des_bl1.png')
@@ -47,7 +47,9 @@ include header.pug
                     #block_sost_img
                         img(src='/assets/img/sost_img.png')
                     .txt
-                        p <b>Докозанол</b> – действующее вещество крема <b>Приора</b>, защищает мембраны клеток от проникновения вируса. Препарат не позволяет герпесу даже попасть внутрь клетки, не говоря уже о дальнейшем развитии и размножении.
+                        p
+                            a(href='/page4.html') <b>Докозанол</b>
+                            | – действующее вещество крема <b>Приора</b>, защищает мембраны клеток от проникновения вируса. Препарат не позволяет герпесу даже попасть внутрь клетки, не говоря уже о дальнейшем развитии и размножении.
                         p <b>Поэтому при первых симптомах герпеса смело и уверенно применяй крем Приора!</b>
                     #block_sost_forvideo
                         #icon_vid
@@ -57,9 +59,10 @@ include header.pug
         #block_video.section-blog__post
             #block_video_inn.wrap
                 #block_video_cont
-                    video#my_video_1.video-js.vjs-default-skin(width='1150px', height='647px', controls='', preload='none', poster='/assets/img/video_snapshot.jpg', data-setup='{ "aspectRatio":"1150:647", "playbackRates": [1, 1.5, 2] }')
-                        source(src='/assets/img/Priora_Rus_720x400_V2_3.mp4', type='video/mp4')
-                        source(src='https://vjs.zencdn.net/v/oceans.webm', type='video/webm')
+                    #player
+                    //video#my_video_1.video-js.vjs-default-skin(width='1150px', height='647px', controls='', preload='none', poster='/assets/img/video_snapshot.jpg', data-setup='{ "aspectRatio":"1150:647", "playbackRates": [1, 1.5, 2] }')
+                    //    source(src='/assets/img/Priora_Rus_720x400_V2_3.mp4', type='video/mp4')
+                    //    source(src='https://vjs.zencdn.net/v/oceans.webm', type='video/webm')
             .clear
         #block_pokaz.section-blog__post
             #block_pokaz_inn.wrap
@@ -78,57 +81,74 @@ include header.pug
                         li
                             h3 Способ применения
                             p Наносите крем <b>Приора</b> тонким слоем на кожу при покалывании, зуде, покраснении каждые 3 часа. <b>Важно успеть это сделать еще до появления пузырьков.</b> Не наносите препарат на кожу вокруг глаз и избегайте попадания крема в глаза. После применения вымойте руки с мылом
+                    a.find(href='https://geoapteka.com.ua/priora' target='_blank')
+                        span Найти в аптеке
             .clear
         #block_question.section-blog__post
             #block_question_inn.wrap
                 #block_stadii_items
                     .block_question_half
                         .block_sts
-                            .quest
-                                img(src='/assets/img/q1.jpg')
-                                p <b>Где производят</b> Приору?
-                                .bgs_over_blue
-                            .answer
-                                .quest_close
-                                p В Великобритании.
-                                .bgs_over_blue
+                            .quest_anwser
+                                .quest
+                                    .quest_inn
+                                        img(src='/assets/img/q1.jpg')
+                                        p <b>Где производят</b> Приору?
+                                        .bgs_over_blue
+                                .answer
+                                    .answer_inn
+                                        .quest_close
+                                        p В Великобритании.
+                                        .bgs_over_blue
                         .block_sts
-                            .quest
-                                img(src='/assets/img/q2.jpg')
-                                p <b>Как часто следует наносить Приору</b> для максимального результата?
-                                .bgs_over_yellow
-                            .answer
-                                .quest_close
-                                p Наносите крем каждые 3 часа тонким слоем на пораженный и граничащий с ним участок. Важно успеть начать лечение при первых симптомах!
-                                .bgs_over_yellow
+                            .quest_anwser
+                                .quest
+                                    .quest_inn
+                                        img(src='/assets/img/q2.jpg')
+                                        p <b>Как часто следует наносить Приору</b> для максимального результата?
+                                        .bgs_over_yellow
+                                .answer
+                                    .answer_inn
+                                        .quest_close
+                                        p Наносите крем каждые 3 часа тонким слоем на пораженный и граничащий с ним участок. Важно успеть начать лечение при первых симптомах!
+                                        .bgs_over_yellow
                         .block_sts
-                            .quest
-                                img(src='/assets/img/q3.jpg')
-                                p <b>Где можно приобрести</b> препарат?
-                                .bgs_over_teles
-                            .answer
-                                .quest_close
-                                p Купить Приору можно в аптеках без рецепта.
-                                .bgs_over_teles
+                            .quest_anwser
+                                .quest
+                                    .quest_inn
+                                        img(src='/assets/img/q3.jpg')
+                                        p <b>Где можно приобрести</b> препарат?
+                                        .bgs_over_teles
+                                .answer
+                                    .answer_inn
+                                        .quest_close
+                                        p Купить Приору можно в аптеках без рецепта.
+                                        .bgs_over_teles
                         .block_sts
-                            .quest
-                                img(src='/assets/img/q4.jpg')
-                                p <b>Какой срок годности</b> открытого тюбика?
-                                .bgs_over_blue
-                            .answer
-                                .quest_close
-                                p 6 місяців
-                                .bgs_over_blue
+                            .quest_anwser
+                                .quest
+                                    .quest_inn
+                                        img(src='/assets/img/q4.jpg')
+                                        p <b>Какой срок годности</b> открытого тюбика?
+                                        .bgs_over_blue
+                                .answer
+                                    .answer_inn
+                                        .quest_close
+                                        p 6 місяців
+                                        .bgs_over_blue
                     .block_question_half
                         .block_sts.sts_big
-                            .quest
-                                img(src='/assets/img/q5.jpg')
-                                p Когда начать использовать Приору  для максимального эффекта?
-                                .bgs_over_teles
-                            .answer
-                                .quest_close
-                                p Чтобы предотвратить появление пузырьков на губах, применяй Приору, как только почувствуете зуд или заметите малейшее покраснение на губах.
-                                .bgs_over_teles
+                            .quest_anwser
+                                .quest
+                                    .quest_inn
+                                        img(src='/assets/img/q5.jpg')
+                                        p Когда начать использовать Приору  для максимального эффекта?
+                                        .bgs_over_teles
+                                .answer
+                                    .answer_inn
+                                        .quest_close
+                                        p Чтобы предотвратить появление пузырьков на губах, применяй Приору, как только почувствуете зуд или заметите малейшее покраснение на губах.
+                                        .bgs_over_teles
                     #stadii_dis1
                         img(src='/assets/img/icon_quest.png')
                     #stadii_dis2

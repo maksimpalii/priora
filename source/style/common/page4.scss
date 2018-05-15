@@ -55,7 +55,9 @@
   transition: all 0.3s ease-in-out;
   background-image: url(/assets/img/line_gr.svg);
   background-position-y: 7px;
-  background-repeat: round;
+  background-repeat: repeat-x;
+  padding: 0 15px;
+  margin: 0 5px;
   &:hover{
     color: #f25042;
   }
@@ -97,7 +99,8 @@
 
   }
   & .link_gr{
-    margin-top:140px;
+    margin:140px 0 0 0;
+    padding: 0;
   }
 }
 #block_clin{
