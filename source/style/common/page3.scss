@@ -3,6 +3,7 @@
   background-repeat: no-repeat;
   background-position: top center;
   padding: 100px 0 100px 0;
+  background-size: cover;
 }
 
 #block_crem_inn {
@@ -120,7 +121,7 @@
 #block_sost {
   padding: 100px 0 150px 0;
   & h2 {
-    font-family: Calibri;
+    font-family: Calibri, 'Istok Web';
     font-size: 44px;
     color: #295791;
   }
@@ -276,6 +277,7 @@
   }
   &.sts_big {
     width: 100%;
+    min-height: 512px;
     height: 100%;
     & img {
     }
@@ -456,10 +458,10 @@
   writing-mode:tb-rl;
   filter:flipH flipV;
   text-align: center;
-  padding: 13px 0;
+  padding: 11px 0;
   & a {
     text-decoration: none;
-    font-family:"Calibri Light";
+    font-family:"Calibri Light", 'Istok Web';
     font-size: 16px;
     color: #b6b6b6;
     transition: all 0.3s ease-in-out;

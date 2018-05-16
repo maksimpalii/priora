@@ -105,7 +105,7 @@
   &:before{
     content: '';
     display: block;
-    width: 97%;
+    width: calc(100% - 6px);
     height: 46px;
     position: absolute;
     background: #ffffff;
@@ -215,7 +215,7 @@
 
 }
 #block_2_left h2 {
-  font-family: Calibri;
+  font-family: Calibri, 'Istok Web';
   font-size: 44px;
   color: #295791;
 margin-top: 0;
@@ -261,7 +261,7 @@ margin-top: 0;
   width: 580px;
 }
 #number{
-  font-family: Calibri;
+  font-family: Calibri, 'Istok Web';
   font-weight: 700;
   color: #f789a7;
   background: none;
@@ -282,7 +282,7 @@ margin-top: 0;
 #percent_txt{
   width: 540px;
   font-size: 44px;
-  font-family: Calibri;
+  font-family: Calibri, 'Istok Web';
   font-weight: 700;
   color: #fb9fa0;
 }
@@ -295,9 +295,19 @@ margin-top: 0;
   }
 }
 #block_4_inn{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   & h2{
+    display: inline-table;
     color: #295791;
     font-size: 45px;
+  }
+  & .find{
+    display: block;
+    margin: 70px auto;
+    position: relative;
+    width: fit-content;
   }
 }
 #icons_block{
@@ -394,7 +404,7 @@ margin-top: 0;
 #block_6_right{
   width: 50%;
   & h2{
-    font-family: Calibri;
+    font-family: Calibri, 'Istok Web';
     font-size: 44px;
     color: #295791;
     margin-bottom: 125px;
@@ -410,7 +420,7 @@ margin-top: 0;
   & h2{
     color: #295791;
     width: 80%;
-    font-family: Calibri;
+    font-family: Calibri, 'Istok Web';
     font-size: 44px;
   }
   .txt{
@@ -419,7 +429,7 @@ margin-top: 0;
 }
 .txt_dop{
   width: 45%;
-  font-family: Calibri;
+  font-family: Calibri, 'Istok Web';
   font-size: 18px;
   color: #295791;
   font-weight: 700;

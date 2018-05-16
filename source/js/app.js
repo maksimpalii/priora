@@ -138,8 +138,6 @@ tag.src = "https://www.youtube.com/iframe_api";
 var firstScriptTag = document.getElementsByTagName('script')[0];
 firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
-// 3. This function creates an <iframe> (and YouTube player)
-//    after the API code downloads.
 var player;
 function onYouTubeIframeAPIReady() {
     player = new YT.Player('player', {
@@ -148,42 +146,38 @@ function onYouTubeIframeAPIReady() {
         videoId: '611Yy41Rubg',
         playerVars: { 'autoplay': 0, 'controls': 0 },
         events: {
-            // 'onReady': onPlayerReady,
-            // 'onStateChange': onPlayerStateChange
+             'onReady': onPlayerReady
+             //'onStateChange': onPlayerStateChange
         }
     });
 }
+// https://developers.google.com/youtube/iframe_api_reference?hl=ru#Playback_status
 
-// 4. The API will call this function when the video player is ready.
-// function onPlayerReady(event) {
-//     event.target.playVideo();
-// }
-
-// 5. The API calls this function when the player's state changes.
-//    The function indicates that when playing a video (state=1),
-//    the player should play for six seconds and then stop.
-var done = false;
-function onPlayerStateChange(event) {
-    if (event.data == YT.PlayerState.PLAYING && !done) {
-        setTimeout(stopVideo, 6000);
-        done = true;
-    }
+function onPlayerReady() {
+    console.log('player dobe');
+    $(window).scroll(function() {
+        var $height = $(window).scrollTop();
+        var vidoffset = $("#block_video").offset().top - 150;
+        var vidheight =  $("#block_video").height();
+        if($height > vidoffset && $height < vidoffset + vidheight ) {
+            player.playVideo();
+        }
+        else{
+            player.pauseVideo();
+        }
+    });
 }
-function stopVideo() {
-    player.stopVideo();
-}
-
 
 
 $('#icon_vid').click(function() {
 $('html, body').animate({
     scrollTop: $("#block_video").offset().top
 }, 1000);
-        player.playVideo();
+       player.playVideo();
 
 });
 
-
+/* Scroll Top */
 $('#gotop').click(function() {
     $('html, body').animate({
         scrollTop: 0
@@ -209,10 +203,7 @@ var menuBlog = (function () {
         });
     }
 });
-
-
 var blogscontent = document.querySelector('.section-blog__content');
-
 if (blogscontent){
     var  menuOffsetTop = $('.section-blog__list').offset().top;
     var  menuOffsetTop2 = $('#footer').offset().top - $('#footer').height();
