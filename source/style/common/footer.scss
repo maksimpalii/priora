@@ -25,4 +25,7 @@
   font-size: 137px;
   text-align: center;
   letter-spacing: 10px;
+  @include pc(){
+    font-size: 85px;
+  }
 }

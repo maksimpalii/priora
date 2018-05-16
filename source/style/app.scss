@@ -42,6 +42,9 @@ a{
   position: relative;
   width: 1150px;
   margin: 0 auto;
+  @include pc(){
+    width: 768px;
+  }
 }
 .clear{
   width: 100%;
@@ -53,6 +56,9 @@ a{
   height: 300px;
   position: relative;
   clear: both;
+  @include pc(){
+    height: 150px;
+  }
 }
 @import 'common/_preloader';
 @import 'common/header';

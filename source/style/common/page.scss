@@ -5,6 +5,9 @@
   background-size: cover;
   padding: 100px 0 100px 0;
   min-height: 568px;
+  @include pc(){
+    min-height: 500px;
+  }
 }
 
 #block_header_img {
@@ -12,6 +15,12 @@
   height: 470px;
   position: absolute;
   left: -430px;
+  @include pc(){
+    left: auto;
+    right: 430px;
+    width: 330px;
+    height: 320px;
+  }
 }
 
 #block_header_img__inn {
@@ -19,6 +28,7 @@
   height: 100%;
   position: relative;
   overflow: hidden;
+
   & img {
     position: absolute;
     @include centered();
@@ -40,6 +50,11 @@
     bottom: auto;
     top: 32%;
   }
+  @include pc(){
+    & img{
+      width: 70%;
+    }
+  }
 }
 
 #block_header_content_dis {
@@ -57,11 +72,21 @@
   position: relative;
   min-height: 470px;
   z-index: 1;
+  @include pc(){
+    padding: 50px 30px 50px 95px;
+    min-height: 370px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
   & h1 {
     font-size: 43px;
     color: #3e5884;
     text-transform: uppercase;
     margin-top: 10px;
+    @include pc(){
+      font-size: 33px;
+    }
   }
 }
 
@@ -223,6 +248,9 @@
 #block_content_inn {
   position: relative;
   padding: 140px 0;
+  @include pc(){
+    padding: 70px 0;
+  }
   &:before{
     content: '';
     display: block;
@@ -239,6 +267,9 @@
 .head_txt {
   font-size: 24px;
   color: #295791;
+  @include pc(){
+    font-size: 20px;
+  }
 }
 
 .back {
@@ -254,6 +285,9 @@
   overflow: hidden;
   margin-bottom: 90px;
   display: inline-flex;
+  @include pc(){
+    margin-bottom: 45px;
+  }
   & span {
     top: 0;
     position: relative;

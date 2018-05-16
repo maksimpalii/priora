@@ -9,6 +9,9 @@
     color: #3e5884;
     text-transform: uppercase;
     text-align: center;
+    @include pc(){
+      font-size: 33px;
+    }
   }
   #icons_block {
     justify-content: space-around;
@@ -18,12 +21,18 @@
     width: 30%;
     margin: 20px 0;
     padding: 50px 0;
+    @include pc(){
+      padding: 25px 0;
+    }
   }
   .find {
     display: block;
     margin: 70px auto;
     position: relative;
     width: fit-content;
+    @include pc(){
+      margin: 70px 0 0 0;
+    }
   }
 }
 #block_gerpes_inn{
@@ -49,6 +58,10 @@
     font-size: 44px;
     color: #295791;
     margin-bottom: 80px;
+    @include pc(){
+      font-size: 34px;
+      margin-bottom: 40px;
+    }
   }
 }
 
@@ -89,6 +102,9 @@
     padding: 0 30px;
     z-index: 1;
     display: inline-table;
+    @include pc(){
+      font-size: 17px;
+    }
   }
   & img {
     z-index: 1;
@@ -148,20 +164,32 @@
   margin: 70px auto;
   position: relative;
   width: fit-content;
+  @include pc(){
+    margin: 70px 0 0 0;
+  }
 }
 #block_lech{
   padding: 140px 0;
+  @include pc(){
+    padding: 70px 0;
+  }
 }
 #block_lech_content{
   width: 470px;
   & h2{
     font-size: 60px;
     color: #fb9fa0;
+    @include pc(){
+      font-size: 50px;
+    }
   }
   & h3{
     font-family: Calibri, 'Istok Web';
     font-size: 44px;
     color: #295791;
+    @include pc(){
+      font-size: 34px;
+    }
   }
   & .note{
     margin-top: 80px;
@@ -197,6 +225,11 @@
   top: 255px;
   left: -90px;
   z-index: 0;
+  @include pc(){
+    & img{
+      width: 70%;
+    }
+  }
 }
 #img_block__bg{
   width: 100%;
@@ -215,6 +248,11 @@
   position: absolute;
   top: 0;
   right: 0;
+  @include pc(){
+    width: 42%;
+    height: 435px;
+    top: 7%;
+  }
 }
 #buttons_lech{
   width: 320px;
@@ -222,5 +260,8 @@
   & .find{
     width: 230px;
     margin-bottom: 20px;
+    @include pc(){
+      width: auto;
+    }
   }
 }

@@ -13,6 +13,9 @@
   display: flex;
   flex-direction: column;
   padding: 0 90px 90px 90px;
+  @include pc(){
+    width: 590px;
+  }
   & h1 {
     font-size: 42px;
     text-align: center;
@@ -20,6 +23,9 @@
     color: #3e5884;
     margin-top: 50px;
     margin-bottom: 80px;
+    @include pc(){
+      font-size: 32px;
+    }
   }
   & .link_gr {
     margin-top: 60px;
@@ -70,6 +76,14 @@
   position: absolute;
   top: -75px;
   right: -190px;
+  @include pc(){
+    right: -531px;
+    top: 37px;
+    & img{
+      width: 68%;
+    }
+
+  }
 }
 #dok_dis1{
   top: 50px;
@@ -83,12 +97,24 @@
 }
 #block_sred{
   padding: 140px 0;
+  @include pc(){
+    padding: 70px 0;
+  }
 }
 #block_sred_img{
   position: absolute;
   left: -120px;
   top: -70px;
   z-index: -1;
+  @include pc(){
+    position: relative;
+    left: 0%;
+    top:0;
+    margin-bottom: 50px;
+    & img{
+      width: 85%;
+    }
+  }
 }
 #block_sred_content{
   width: 625px;
@@ -97,11 +123,21 @@
     font-size: 42px;
     color: #295791;
     margin-bottom: 100px;
-
+    @include pc(){
+      font-size: 32px;
+      margin-bottom: 50px;
+    }
   }
   & .link_gr{
     margin:140px 0 0 0;
     padding: 0;
+    @include pc(){
+      margin: 80px 0 0 0;
+    }
+  }
+  @include pc(){
+    float: none;
+    margin: 0 auto;
   }
 }
 #block_clin{
@@ -111,6 +147,9 @@
   background-position: center center;
   background-size: cover;
   overflow: hidden;
+  @include pc(){
+    padding: 70px 0;
+  }
 }
 #block_clin_content{
   width: 49%;
@@ -118,6 +157,9 @@
   & h2{
     font-size:60px;
     color: #295791;
+    @include pc(){
+      font-size: 50px;
+    }
   }
   & p{
     color: #295791;
@@ -125,9 +167,19 @@
   & .find{
     margin-top: 50px;
   }
+  @include pc(){
+    width: 70%;
+    float: none;
+    margin: 0 auto;
+  }
 }
 #block_clin_dis{
   position: absolute;
   top:0;
   left: 75px;
+  @include pc(){
+    @include centered();
+    top: 66%;
+    left: 75%;
+  }
 }

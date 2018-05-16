@@ -23,6 +23,9 @@
   background-image: url('/assets/img/lips_bl1.png');
   background-repeat: no-repeat;
   background-position: bottom right;
+  @include pc(){
+    height: auto;
+  }
 }
 
 #cont_logo_crem {
@@ -42,11 +45,18 @@
   text-transform: uppercase;
   text-align: left;
   padding: 0 65px 0 115px;
+  @include pc(){
+    font-size: 32px;
+    padding: 0 30px 0 95px;
+  }
 }
 
 #block_crem_content__txt {
   padding: 0 65px 0 115px;
   font-size: 18px;
+  @include pc(){
+    padding: 0 30px 0 95px;
+  }
   & b {
     color: #3e5884;
   }
@@ -58,6 +68,9 @@
 
 #block_crem_buttons .find {
   margin: 0 20px 0 115px;
+  @include pc(){
+    margin: 0 20px 30px 115px;
+  }
 }
 
 #block_crem_dis {
@@ -85,6 +98,12 @@
   right: 95px;
   top: 80px;
   z-index: 10;
+  @include pc(){
+    right: 50px;
+    & .tube{
+      width: 130%;
+    }
+  }
 }
 
 #img_crem_dis1 {
@@ -92,6 +111,11 @@
   top: 110px;
   left: -65px;
   z-index: -1;
+  @include pc(){
+    & img{
+      width: 130%;
+    }
+  }
 }
 
 #img_crem_dis2 {
@@ -116,6 +140,10 @@
   right: -5px;
   z-index: 0;
   transform: rotateZ(-2deg);
+  @include pc(){
+    top: 48px;
+    right: -25px;
+  }
 }
 
 #block_sost {
@@ -124,6 +152,9 @@
     font-family: Calibri, 'Istok Web';
     font-size: 44px;
     color: #295791;
+    @include pc(){
+      font-size: 34px;
+    }
   }
 }
 
@@ -135,6 +166,12 @@
   position: absolute;
   top: -35%;
   right: 0;
+  @include pc(){
+    right: -35%;
+    & img{
+      width: 70%;
+    }
+  }
 }
 
 #block_sost_forvideo {
@@ -149,22 +186,34 @@
 
 #block_video {
   padding: 100px 0;
+  @include pc(){
+    padding: 50px 0;
+  }
 }
 
 #block_video_cont {
   width: 1150px;
   height: 650px;
+  @include pc(){
+    width: 768px;
+    height: 434px;
+  }
 }
 
 #block_pokaz {
   padding: 100px 0 140px 0;
+  @include pc(){
+    padding: 50px 0 70px 0;
+  }
 }
 
 #block_pokaz_inn {
   display: flex;
   align-items: center;
   justify-content: space-around;
-
+@include pc(){
+  align-items: flex-start;
+}
 }
 
 #block_pokaz_img {
@@ -173,6 +222,11 @@
     position: absolute;
     bottom: -20%;
     left: -15%;
+    @include pc(){
+      & img{
+        width: 70%;
+      }
+    }
   }
 }
 
@@ -192,6 +246,10 @@
       width: 110%;
     }
   }
+  @include pc(){
+    width: 335px;
+    height:325px;
+  }
 }
 
 #block_pokaz_right {
@@ -201,13 +259,24 @@
     position: relative;
     margin-left: 50px;
     padding-left: 30px;
+    @include pc(){
+      margin-left: 30px;
+      margin-top: 0;
+    }
     & h3 {
       font-size: 28px;
       color: #295791;
       margin-bottom: 10px;
+      @include pc(){
+        font-size: 26px;
+        margin-top: 0;
+      }
     }
     & li {
       margin-left: 30px;
+      @include pc(){
+        margin-left: 20px;
+      }
       &:before {
         content: '';
         display: block;
@@ -216,10 +285,18 @@
         width: 39px;
         height: 39px;
         background-image: url('/assets/img/pokaz_li.png');
+        @include pc(){
+          width: 30px;
+          height:30px;
+          background-size: cover;
+        }
       }
       & p {
         margin-top: 10px;
         font-size: 19px;
+        @include pc(){
+          font-size: 18px;
+        }
       }
       & b {
         color: #295791;
@@ -233,6 +310,9 @@
 
 #block_question {
   padding: 100px 0 140px 0;
+  @include pc(){
+    padding: 50px 0 70px 0;
+  }
 }
 
 .block_question_half {
@@ -242,12 +322,18 @@
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
+  @include pc(){
+    width: 100%;
+  }
 }
 
 .block_sts {
   width: 50%;
   height: 256px;
   position: relative;
+  @include pc(){
+    height: 290px;
+  }
   & span {
     font-size: 10px;
     color: #ffffff;
@@ -264,6 +350,7 @@
     padding: 0 30px;
     position: relative;
     z-index: 10;
+
     & b {
       font-weight: 700;
     }
@@ -279,6 +366,9 @@
     width: 100%;
     min-height: 512px;
     height: 100%;
+    @include pc(){
+      min-height: 455px;
+    }
     & img {
     }
   }
@@ -339,7 +429,6 @@
   z-index: 10;
 }
 
-
 .quest_close {
   position: absolute;
   width: 35px;
@@ -381,7 +470,14 @@
     }
   }
 }
-
+#block_question_items{
+  display: flex;
+  position: relative;
+  width: 100%;
+@include pc(){
+  flex-direction: column;
+}
+}
 #stadii_dis1 {
   position: absolute;
   top: 40%;

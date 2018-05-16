@@ -4,7 +4,6 @@ $varCircHtml5: 0.85;
   background: $var2;
 }
 
-
 @mixin round(){
   border-radius: 50%;
 }
@@ -41,8 +40,7 @@ $varCircHtml5: 0.85;
   }
 }
 @mixin pc(){
- // @media screen and (max-width: 1200px){
-  @media screen and (max-width: 1100px){
+  @media screen and (max-width: 1200px){
     @content;
   }
 }
