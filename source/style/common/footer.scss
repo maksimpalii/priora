@@ -28,4 +28,7 @@
   @include pc(){
     font-size: 85px;
   }
+  @include iphone(){
+    font-size: 200%;
+  }
 }

@@ -15,7 +15,7 @@ html {
     font-size: 1.685vmin;
   }
   @include iphone {
-    font-size: 12px;
+    font-size: 14px;
 
   }
 }
@@ -45,6 +45,11 @@ a{
   @include pc(){
     width: 768px;
   }
+  @include iphone(){
+    width: calc(100% - 40px);
+    padding: 0 20px;
+    overflow: hidden;
+  }
 }
 .clear{
   width: 100%;
@@ -58,6 +63,9 @@ a{
   clear: both;
   @include pc(){
     height: 150px;
+  }
+  @include iphone(){
+    height:100px;
   }
 }
 @import 'common/_preloader';

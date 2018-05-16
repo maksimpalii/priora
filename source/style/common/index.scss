@@ -300,6 +300,9 @@
   & b {
     color: #295791;
   }
+  @include iphone(){
+    font-size: 14px;
+  }
 }
 
 #block_2_left ul {

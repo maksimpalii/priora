@@ -8,6 +8,9 @@
   &.active {
     background-color: #ffffff;
   }
+  @include iphone(){
+    display: none;
+  }
 }
 
 #header.fixed {
