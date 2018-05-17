@@ -9,7 +9,61 @@
     background-color: #ffffff;
   }
   @include iphone(){
-    display: none;
+
+  }
+}
+.menu-mob{
+  display: none;
+  position: absolute;
+  z-index: 30;
+  right: 15px;
+  top: 21px;
+  width: 20px;
+  height: 13px;
+  cursor: pointer;
+  & span{
+    width: 20px;
+    height: 3px;
+    background-color: #3e5884;
+    display: block;
+    transition: 1s;
+    &:before{
+      transform-origin: 100% 0;
+      margin-top: -7px;
+      position: absolute;
+      content: '';
+      width: 20px;
+      height: 3px;
+      background-color: #3e5884;
+      display: block;
+      transition: 1s;
+    }
+    &:after{
+      transform-origin: 100% 100%;
+      margin-top: 7px;
+      position: absolute;
+      content: '';
+      width: 20px;
+      height: 3px;
+      background-color: #3e5884;
+      display: block;
+      transition: 1s;
+    }
+  }
+  &.active{
+    & span{
+      background: transparent;
+      &:before{
+        transform: rotate(-45deg);
+      }
+      &:after{
+        transform: rotate(45deg);
+      }
+    }
+  }
+
+  @include iphone(){
+    display: block;
   }
 }
 
@@ -26,6 +80,12 @@
 
 #header #logo {
   padding-top: 15px;
+  @include iphone(){
+    padding-top: 5px;
+    & a img{
+      width: 100px;
+    }
+  }
 }
 
 #menu {
@@ -35,14 +95,40 @@
   font-family: "Calibri Light", 'Istok Web';
   text-transform: uppercase;
 }
-
+.menu-container{
+  @include iphone(){
+    position: fixed;
+    left: 0;
+    top: -100%;
+    background-color: #b0ebff;
+    background-image: url('/assets/img/mob-fon.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    transition: all 0.5s ease-in-out;
+    &.active{
+      top:0;
+    }
+  }
+}
 .menu-container #menu {
   display: flex;
   justify-content: space-around;
+  @include iphone(){
+    width: 80%;
+    flex-direction: column;
+    position: absolute;
+    @include centered();
+    align-items: center;
+  }
 }
 
 #menu li {
   padding: 5px 15px;
+  @include iphone(){
+    margin: 20px 0;
+  }
 }
 
 #menu li a {

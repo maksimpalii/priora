@@ -5,7 +5,7 @@
   background-repeat: no-repeat;
   opacity: 0.6;
   position: fixed;
-  z-index: 100;
+  z-index: 10;
   bottom: -20%;
   right: 2%;
   cursor: pointer;
@@ -21,6 +21,7 @@
   box-shadow: 0px -10px 50px 0px rgba(0, 0, 0, 0.3);
 }
 #hw{
+  padding: 20px 0;
   color: #fed2d4;
   font-size: 137px;
   text-align: center;
@@ -29,6 +30,6 @@
     font-size: 85px;
   }
   @include iphone(){
-    font-size: 200%;
+    font-size: 175%;
   }
 }

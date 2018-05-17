@@ -50,26 +50,30 @@ include header-home.pug
     #block_4
         #block_4_inn.wrap
             h2 К появлению видимых симптомов герпеса на губах могут привести простые причины
-            #block_4_icons
-                #icons_block
-                    .icons_item
-                        img(src='/assets/img/ic1.png')
-                        p Стрессы и нагрузки
-                    .icons_item
-                        img(src='/assets/img/ic2.png')
-                        p Переохлаждение
-                    .icons_item
-                        img(src='/assets/img/ic3.png')
-                        p ОРВИ
-                    .icons_item
-                        img(src='/assets/img/ic4.png')
-                        p Переутомление
-                    .icons_item
-                        img(src='/assets/img/ic5.png')
-                        p Ультрафиолет
-                    .icons_item
-                        img(src='/assets/img/ic6.png')
-                        p Изменение гормонального фона
+            #block_4_icons.swiper-container
+                #icons_block.swiper-wrapper
+                    .swiper-slide
+                        .icons_item
+                            img(src='/assets/img/ic1.png')
+                            p Стрессы и нагрузки
+                        .icons_item
+                            img(src='/assets/img/ic2.png')
+                            p Переохлаждение
+                    .swiper-slide
+                        .icons_item
+                            img(src='/assets/img/ic3.png')
+                            p ОРВИ
+                        .icons_item
+                            img(src='/assets/img/ic4.png')
+                            p Переутомление
+                    .swiper-slide
+                        .icons_item
+                            img(src='/assets/img/ic5.png')
+                            p Ультрафиолет
+                        .icons_item
+                            img(src='/assets/img/ic6.png')
+                            p Изменение гормонального фона
+                .swiper-pagination
             a.find(href='#')
                 span Узнать больше
     #block_5

@@ -9,20 +9,31 @@
     color: #3e5884;
     text-transform: uppercase;
     text-align: center;
-    @include pc(){
+    @include pc() {
       font-size: 33px;
     }
+    @include iphone() {
+      font-size: 22px;
+
+    }
+
   }
   #icons_block {
     justify-content: space-around;
+    @include iphone() {
+      justify-content: flex-start;
+    }
   }
   .icons_item {
     background-color: #ffffff;
-    width: 30%;
+    width: 100%;
     margin: 20px 0;
     padding: 50px 0;
-    @include pc(){
+    @include pc() {
       padding: 25px 0;
+    }
+    @include iphone() {
+      width: 100%;
     }
   }
   .find {
@@ -30,16 +41,32 @@
     margin: 70px auto;
     position: relative;
     width: fit-content;
-    @include pc(){
+    @include pc() {
       margin: 70px 0 0 0;
     }
   }
+  & .swiper-slide {
+    width: 30%;
+  }
+
+  @include iphone() {
+    padding-top: 55px;
+    & .swiper-container {
+      overflow: hidden;
+    }
+    & .swiper-pagination-bullet{
+      border:1px solid #ffffff;
+    }
+
+  }
 }
-#block_gerpes_inn{
+
+#block_gerpes_inn {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
+
 #block_stadii_inn {
   margin: 60px auto;
   display: flex;
@@ -51,6 +78,9 @@
   display: flex;
   position: relative;
   width: 100%;
+  @include iphone() {
+    flex-direction: column;
+  }
 }
 
 #block_stadii {
@@ -58,11 +88,16 @@
     font-size: 44px;
     color: #295791;
     margin-bottom: 80px;
-    @include pc(){
+    @include pc() {
       font-size: 34px;
       margin-bottom: 40px;
     }
+    @include iphone() {
+      font-size: 22px;
+      text-align: left;
+    }
   }
+
 }
 
 .block_stadii_half {
@@ -72,6 +107,10 @@
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
+  @include iphone() {
+    width: 100%;
+    flex-direction: column;
+  }
 }
 
 .block_st {
@@ -102,7 +141,7 @@
     padding: 0 30px;
     z-index: 1;
     display: inline-table;
-    @include pc(){
+    @include pc() {
       font-size: 17px;
     }
   }
@@ -113,8 +152,12 @@
     width: 100%;
     min-height: 512px;
     height: 100%;
-    & img{
+    & img {
       margin: 15px 0 10px 0;
+    }
+    @include iphone() {
+      height: 256px;
+      min-height: 256px;
     }
   }
   &:nth-child(2) {
@@ -127,6 +170,9 @@
       width: 50%;
     }
   }
+  @include iphone() {
+    width: 100%;
+  }
 }
 
 .bg_over_blue {
@@ -135,7 +181,7 @@
   height: 100%;
   background-color: rgba(154, 255, 253, 0.56);
   z-index: 0;
-  top:0;
+  top: 0;
   left: 0;
 }
 
@@ -145,7 +191,7 @@
   height: 100%;
   background-color: rgba(248, 255, 130, 0.56);
   z-index: 0;
-  top:0;
+  top: 0;
   left: 0;
 }
 
@@ -155,7 +201,7 @@
   height: 100%;
   background-color: rgba(254, 217, 213, 0.56);
   z-index: 0;
-  top:0;
+  top: 0;
   left: 0;
 }
 
@@ -164,74 +210,104 @@
   margin: 70px auto;
   position: relative;
   width: fit-content;
-  @include pc(){
+  @include pc() {
     margin: 70px 0 0 0;
   }
 }
-#block_lech{
+
+#block_lech {
   padding: 140px 0;
-  @include pc(){
+  @include pc() {
     padding: 70px 0;
+    padding-top: 35px;
   }
 }
-#block_lech_content{
+
+#block_lech_content {
   width: 470px;
-  & h2{
+  & h2 {
     font-size: 60px;
     color: #fb9fa0;
-    @include pc(){
+    @include pc() {
       font-size: 50px;
     }
+    @include iphone() {
+      font-size: 24px;
+    }
   }
-  & h3{
+  & h3 {
     font-family: Calibri, 'Istok Web';
     font-size: 44px;
     color: #295791;
-    @include pc(){
+    @include pc() {
       font-size: 34px;
     }
+    @include iphone() {
+      font-size: 22px;
+    }
   }
-  & .note{
+  & .note {
     margin-top: 80px;
     color: #bbbbbb;
   }
+  @include iphone() {
+    width: 100%;
+  }
 }
-#img_block__inn{
+
+#img_block__inn {
   width: 100%;
   height: 100%;
   position: relative;
   overflow: hidden;
   z-index: 1;
-  & img{
+  & img {
     position: absolute;
     @include centered();
     width: 101%;
     transition: all 0.5s ease-in-out;
+    @include iphone() {
+      position: relative;
+      top: auto;
+      left: auto;
+      width: 100%;
+      height: auto;
+      transform: none;
+    }
   }
-  &:hover{
-    & img{
+  &:hover {
+    & img {
       width: 110%;
     }
   }
 }
-#img_block__des1{
+
+#img_block__des1 {
   position: absolute;
   top: -35px;
   right: -35px;
   z-index: 10;
+  @include iphone() {
+    right: -90px;
+    & img {
+      width: 50%;
+    }
+  }
 }
-#img_block__des2{
+
+#img_block__des2 {
   position: absolute;
   top: 255px;
   left: -90px;
   z-index: 0;
-  @include pc(){
-    & img{
+  @include pc() {
+    & img {
       width: 70%;
     }
   }
 }
-#img_block__bg{
+
+#img_block__bg {
   width: 100%;
   height: 100%;
   background-image: url('/assets/img/lech_bg.jpg');
@@ -239,29 +315,48 @@
   background-position: center center;
   background-size: cover;
   position: absolute;
-  top:0;
+  top: 0;
   z-index: 0;
 }
-#lech_img_block{
+
+#lech_img_block {
   width: 530px;
   height: 710px;
   position: absolute;
   top: 0;
   right: 0;
-  @include pc(){
+  @include pc() {
     width: 42%;
     height: 435px;
     top: 7%;
+    @include iphone() {
+      position: relative;
+      width: 100%;
+      height: auto;
+      top: 0;
+      margin: 30px 0;
+    }
   }
 }
-#buttons_lech{
+
+#buttons_lech {
   width: 320px;
   margin-top: 80px;
-  & .find{
+  & .find {
     width: 230px;
     margin-bottom: 20px;
-    @include pc(){
+    @include pc() {
       width: auto;
+    }
+  }
+  @include iphone() {
+    width: 100%;
+    & .find {
+      display: block;
+    }
+    & .more{
+      display: block;
+      text-align: center;
     }
   }
 }

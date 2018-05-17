@@ -4,6 +4,9 @@
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
+  @include iphone(){
+    padding: 80px 0 50px 0;
+  }
 }
 
 #block_doka_content {
@@ -13,7 +16,7 @@
   display: flex;
   flex-direction: column;
   padding: 0 90px 90px 90px;
-  @include pc(){
+  @include pc() {
     width: 590px;
   }
   & h1 {
@@ -23,15 +26,26 @@
     color: #3e5884;
     margin-top: 50px;
     margin-bottom: 80px;
-    @include pc(){
+    @include pc() {
       font-size: 32px;
+    }
+    @include iphone() {
+      font-size: 22px;
+      margin-bottom: 35px;
     }
   }
   & .link_gr {
     margin-top: 60px;
+    @include iphone(){
+      margin: 35px 0;
+    }
   }
   & .txt {
     width: 90%;
+  }
+  @include iphone() {
+    width: calc(100% - 40px);
+    padding: 0 20px;
   }
 }
 
@@ -39,6 +53,10 @@
   display: flex;
   align-items: center;
   margin-bottom: 45px;
+  @include iphone(){
+    flex-direction: column;
+    margin-bottom: 35px;
+  }
 }
 
 #doka_txt {
@@ -47,6 +65,11 @@
   font-weight: 700;
   width: 50%;
   margin-left: 50px;
+  @include iphone(){
+    width: 100%;
+    margin-top: 35px;
+    margin-left: 0;
+  }
 }
 
 .link_gr {
@@ -65,119 +88,166 @@
   background-size: 100%;
   padding: 0 15px;
   margin: 0 5px;
-  &:hover{
+  &:hover {
     color: #f25042;
   }
-
-
+@include iphone(){
+  font-size: 14px;
+  text-align: left;
+  display: initial;
+}
 }
 
 #block_doka_mg {
   position: absolute;
   top: -75px;
   right: -190px;
-  @include pc(){
+  @include pc() {
     right: -531px;
     top: 37px;
-    & img{
+    & img {
       width: 68%;
     }
-
+    @include iphone() {
+      display: none;
+    }
   }
 }
-#dok_dis1{
+
+#dok_dis1 {
   top: 50px;
   position: absolute;
   left: -35px;
 }
-#dok_dis2{
+
+#dok_dis2 {
   position: absolute;
   top: 60%;
   left: -65px;
+  @include iphone(){
+    display: none;
+  }
 }
-#block_sred{
+
+#block_sred {
   padding: 140px 0;
-  @include pc(){
+  @include pc() {
     padding: 70px 0;
   }
 }
-#block_sred_img{
+
+#block_sred_img {
   position: absolute;
   left: -120px;
   top: -70px;
   z-index: -1;
-  @include pc(){
+  @include pc() {
     position: relative;
     left: 0%;
-    top:0;
+    top: 0;
     margin-bottom: 50px;
-    & img{
+    & img {
       width: 85%;
     }
   }
+  @include iphone(){
+    & img{
+      width: 100%;
+    }
+  }
 }
-#block_sred_content{
+
+#block_sred_content {
   width: 625px;
   float: right;
-  & h2{
+  & h2 {
     font-size: 42px;
     color: #295791;
     margin-bottom: 100px;
-    @include pc(){
+    @include pc() {
       font-size: 32px;
       margin-bottom: 50px;
     }
-  }
-  & .link_gr{
-    margin:140px 0 0 0;
-    padding: 0;
-    @include pc(){
-      margin: 80px 0 0 0;
+    @include iphone(){
+      font-size: 22px;
+      margin-bottom: 30px;
     }
   }
-  @include pc(){
+  & .link_gr {
+    margin: 140px 0 0 0;
+    padding: 0;
+    @include pc() {
+      margin: 80px 0 0 0;
+    }
+    @include iphone(){
+      margin: 40px 0 0 0;
+    }
+  }
+  @include pc() {
     float: none;
     margin: 0 auto;
   }
+  @include iphone(){
+    width: 100%;
+  }
 }
-#block_clin{
+
+#block_clin {
   padding: 100px 0;
   background-image: url('/assets/img/clin_bg.jpg');
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
   overflow: hidden;
-  @include pc(){
+  @include pc() {
     padding: 70px 0;
   }
-}
-#block_clin_content{
-  width: 49%;
-  float: right;
-  & h2{
-    font-size:60px;
-    color: #295791;
-    @include pc(){
-      font-size: 50px;
+  @include iphone(){
+    padding: 35px 0;
+    & .link_gr{
+      font-size: 14px;
     }
   }
-  & p{
+}
+
+#block_clin_content {
+  width: 49%;
+  float: right;
+  & h2 {
+    font-size: 60px;
+    color: #295791;
+    @include pc() {
+      font-size: 50px;
+    }
+    @include iphone(){
+      font-size: 32px;
+    }
+  }
+  & p {
     color: #295791;
   }
-  & .find{
+  & .find {
     margin-top: 50px;
+    @include iphone(){
+      display: block;
+      text-align: center;
+    }
   }
-  @include pc(){
+  @include pc() {
     width: 70%;
     float: none;
     margin: 0 auto;
   }
+  @include iphone(){
+    width: 100%;
+  }
 }
-#block_clin_dis{
+
+#block_clin_dis {
   position: absolute;
-  top:0;
+  top: 0;
   left: 75px;
-  @include pc(){
+  @include pc() {
     @include centered();
     top: 66%;
     left: 75%;

@@ -131,7 +131,6 @@ $(window).load(function() {
 
 /* Video */
 
-
 var tag = document.createElement('script');
 
 tag.src = "https://www.youtube.com/iframe_api";
@@ -240,3 +239,18 @@ if (blogscontent){
 }
 menuBlog();
 
+if ($(window).width() < 768) {
+    var swiper = new Swiper('.swiper-container', {
+        pagination: {
+            el: '.swiper-pagination',
+        },
+    });
+}
+
+$('.menu-mob').click(function () {
+   $(this).toggleClass('active');
+    $('.menu-container').toggleClass('active');
+});
+$('.section-blog__menu span').click(function () {
+    $('.section-blog__menu').toggleClass('active');
+});

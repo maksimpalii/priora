@@ -4,11 +4,17 @@
   background-position: top center;
   background-size: cover;
   padding: 100px 0 100px 0;
+  @include iphone(){
+    padding: 55px 0 100px 0;
+  }
 }
 
 #block_1_inn {
   display: flex;
   align-items: center;
+  @include iphone() {
+    flex-direction: column;
+  }
 }
 
 #block_1_content {
@@ -27,10 +33,23 @@
   @include pc() {
     height: auto;
   }
+  @include iphone() {
+    width: calc(100% - 40px);
+    margin-top: -80px;
+    padding: 80px 20px 0px 20px;
+  }
 }
 
 #cont_logo {
   margin-top: 40px;
+  @include iphone() {
+    & img {
+      position: relative;
+      width: 85%;
+      margin: 0 auto;
+      display: block;
+    }
+  }
 }
 
 #block_1_content h1 {
@@ -45,6 +64,10 @@
     font-size: 32px;
     padding: 0 30px 0 95px
   }
+  @include iphone() {
+    font-size: 22px;
+    padding: 0;
+  }
 }
 
 #block_1_content__txt {
@@ -57,6 +80,10 @@
   & b {
     color: #3e5884;
   }
+  @include iphone() {
+    padding: 0;
+    font-size: 14px;
+  }
 }
 
 #block_1_buttons {
@@ -67,6 +94,9 @@
     margin-bottom: 30px;
     padding: 0 30px 0 95px;
     margin-top: 30px;
+  }
+  @include iphone() {
+    padding: 0;
   }
 }
 
@@ -182,6 +212,10 @@
   position: absolute;
   top: 125px;
   right: -15px;
+  @include iphone() {
+    top: 60%;
+    right: -60px;
+  }
 }
 
 #block_1_dis2 {
@@ -198,6 +232,10 @@
   @include pc() {
     width: 375px;
     height: 375px;
+    @include iphone() {
+      width: calc(100% - 40px);
+      height: auto;
+    }
   }
 }
 
@@ -205,6 +243,10 @@
   position: absolute;
   right: -75px;
   z-index: 10;
+  @include iphone() {
+    position: relative;
+    right: auto;
+  }
 }
 
 #img_bl1_inn {
@@ -216,11 +258,23 @@
     width: 330px;
     height: 320px;
   }
+  @include iphone() {
+    width: 100%;
+    height: auto;
+  }
   & img {
     position: absolute;
     @include centered();
     width: 101%;
     transition: all 0.5s ease-in-out;
+    @include iphone() {
+      position: relative;
+      width: 100%;
+      height: auto;
+      top: auto;
+      left: auto;
+      transform: none;
+    }
   }
   &:hover {
     & img {
@@ -238,6 +292,9 @@
     & img {
       width: 70%;
     }
+    @include iphone() {
+      top: 60px;
+    }
   }
 }
 
@@ -250,12 +307,18 @@
     bottom: 7px;
     left: -35px;
   }
+  @include iphone() {
+    display: none;
+  }
 }
 
 #block_2_inn {
   padding-top: 185px;
   display: flex;
   padding-bottom: 125px;
+  @include iphone() {
+    padding: 50px 0;
+  }
 }
 
 #block_2_left {
@@ -278,7 +341,15 @@
       width: 570px;
     }
   }
-
+  @include iphone() {
+    position: relative;
+    top: auto;
+    right: auto;
+    & img {
+      width: 135%;
+      margin: 30px 0;
+    }
+  }
 }
 
 #block_2_left h2 {
@@ -288,6 +359,9 @@
   margin-top: 0;
   @include pc() {
     font-size: 34px;
+  }
+  @include iphone() {
+    font-size: 22px;
   }
 }
 
@@ -300,7 +374,7 @@
   & b {
     color: #295791;
   }
-  @include iphone(){
+  @include iphone() {
     font-size: 14px;
   }
 }
@@ -309,6 +383,9 @@
   list-style-type: none;
   margin: 65px 0;
   padding: 0;
+  @include iphone() {
+    margin: 30px 0;
+  }
   & li {
     font-size: 18px;
     margin-bottom: 33px;
@@ -321,6 +398,9 @@
       float: left;
       margin-right: 30px;
     }
+    @include iphone() {
+      font-size: 14px;
+    }
   }
 }
 
@@ -332,12 +412,19 @@
   @include pc() {
     padding: 50px 0;
   }
+  @include iphone() {
+    flex-direction: column;
+    overflow: visible;
+  }
 }
 
 #percent {
   width: 580px;
   @include pc() {
     width: 400px;
+  }
+  @include iphone() {
+    width: 100%;
   }
 }
 
@@ -360,9 +447,15 @@
     @include pc() {
       font-size: 110px;
     }
+    @include iphone() {
+      font-size: 75px;
+    }
   }
   @include pc() {
     font-size: 290px;
+  }
+  @include iphone() {
+    font-size: 200px;
   }
 }
 
@@ -376,6 +469,10 @@
     width: 385px;
     font-size: 34px;
   }
+  @include iphone() {
+    width: 100%;
+    font-size: 24px;
+  }
 }
 
 #block_3_dis {
@@ -387,6 +484,9 @@
     @include pc() {
       width: 90%;
       margin-left: -160px;
+    }
+    @include iphone() {
+      margin-left: -90px;
     }
   }
 }
@@ -402,14 +502,18 @@
     @include pc() {
       font-size: 35px;
     }
+    @include iphone() {
+      font-size: 22px;
+    }
   }
   & .find {
     display: block;
     margin: 70px auto;
     position: relative;
     width: fit-content;
-    @include pc(){
+    @include pc() {
       margin: 35px auto;
+      margin-top: 50px;
     }
   }
   @include pc() {
@@ -420,10 +524,15 @@
 #icons_block {
   display: flex;
   flex-wrap: wrap;
+  @include iphone() {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    width: 100%;
+  }
 }
 
 .icons_item {
-  width: 33%;
+  width: 100%;
   text-align: center;
   margin: 70px 0;
   @include pc() {
@@ -447,6 +556,60 @@
   }
 }
 
+.swiper-container {
+  width: 100%;
+}
+
+.swiper-wrapper {
+  @include iphone() {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    display: flex;
+    transition-property: transform;
+    box-sizing: content-box;
+  }
+}
+
+.swiper-slide {
+  width: 33%;
+  display: flex;
+  flex-direction: column;
+  @include iphone() {
+    flex-shrink: 0;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transition-property: transform;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.swiper-pagination-bullets {
+  @include iphone() {
+    opacity: 0.35;
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.swiper-pagination-bullet {
+  @include iphone() {
+    width: 18px;
+    height: 18px;
+    border: 1px solid #e573a6;
+    border-radius: 50%;
+    display: block;
+    margin: 0 4px;
+    &.swiper-pagination-bullet-active {
+      background: #e573a6;
+    }
+  }
+}
+
 #block_5 {
   background-image: url('/assets/img/atten_bg.jpg');
   background-repeat: no-repeat;
@@ -460,6 +623,9 @@
   padding: 120px 0 35px 0;
   @include pc() {
     padding: 60px 0 35px 0;
+  }
+  @include iphone() {
+    overflow: visible;
   }
 }
 
@@ -475,6 +641,14 @@
       top: 65px;
       height: 65%;
     }
+    @include iphone() {
+      right: 35%;
+    }
+  }
+  @include iphone() {
+    position: absolute;
+    width: 100%;
+    z-index: 0;
   }
 }
 
@@ -483,10 +657,20 @@
     color: #295791;
     font-size: 60px;
     text-transform: uppercase;
+    @include iphone() {
+      font-size: 45px;
+      margin-top: 0;
+    }
   }
+
   .txt {
     color: #295791;
     margin-bottom: 70px;
+  }
+  @include iphone() {
+    width: 100%;
+    z-index: 1;
+    text-align: center;
   }
 }
 
@@ -496,6 +680,10 @@
   padding: 150px 0;
   @include pc() {
     padding: 75px 0;
+  }
+  @include iphone() {
+    overflow: visible;
+    flex-direction: column;
   }
 }
 
@@ -513,6 +701,12 @@
         width: 70%;
       }
     }
+    @include iphone() {
+      right: -75px;
+      & img {
+        width: 55%;
+      }
+    }
   }
   #des6_1 {
     position: absolute;
@@ -525,6 +719,16 @@
         width: 70%;
       }
     }
+    @include iphone() {
+      left: -20px;
+      bottom: -60px;
+      & img {
+        width: 40%;
+      }
+    }
+  }
+  @include iphone() {
+    width: 100%;
   }
 }
 
@@ -538,6 +742,14 @@
     @include centered();
     width: 101%;
     transition: all 0.5s ease-in-out;
+    @include iphone() {
+      position: relative;
+      width: 100%;
+      height: auto;
+      transform: none;
+      left: auto;
+      top: auto;
+    }
   }
   &:hover {
     & img {
@@ -547,6 +759,10 @@
   @include pc() {
     width: 330px;
     height: 320px;
+  }
+  @include iphone() {
+    width: 100%;
+    height: auto;
   }
 }
 
@@ -560,6 +776,20 @@
     @include pc() {
       font-size: 34px;
       margin-bottom: 20px;
+      margin-top: 45px;
+    }
+  }
+  @include iphone() {
+    width: 100%;
+    & h2 {
+      font-size: 22px;
+      padding: 30px 0;
+    }
+  }
+  @include iphone() {
+    & .find {
+      text-align: center;
+      display: block;
     }
   }
 }
@@ -571,6 +801,13 @@
   @include pc() {
     padding: 75px 0;
   }
+  @include iphone() {
+    padding: 20px 0 50px 0;
+    & .find {
+      display: block;
+      text-align: center;
+    }
+  }
 }
 
 #block_7_left {
@@ -580,12 +817,22 @@
     width: 80%;
     font-family: Calibri, 'Istok Web';
     font-size: 44px;
+    @include iphone() {
+      font-size: 22px;
+      width: 100%;
+    }
   }
   .txt {
     width: 78%;
   }
   @include pc() {
     width: 80%;
+  }
+  @include iphone() {
+    width: 100%;
+    & .txt {
+      width: 100%;
+    }
   }
 }
 
@@ -598,6 +845,10 @@
   margin: 25px 0 150px 0;
   @include pc() {
     margin: 25px 0 75px 0;
+  }
+  @include iphone() {
+    width: 100%;
+    margin: 25px 0 50px 0;
   }
 }
 
@@ -614,11 +865,25 @@
     }
 
   }
+  @include iphone() {
+    left: 0;
+    top: auto;
+    width: 100%;
+    margin: 30px 0;
+    position: relative;
+    & img {
+      margin: 0;
+      width: 100%;
+    }
+  }
 }
 
 #block_7_right {
   width: 50%;
   position: relative;
+  @include iphone() {
+    display: none;
+  }
 }
 
 .note {
@@ -633,8 +898,16 @@
     height: 1px;
     background: #fec3ce;
     margin-bottom: 40px;
+
   }
-  @include pc(){
+  & p {
+    word-wrap: break-word;
+  }
+  @include pc() {
     margin-top: 90px;
+  }
+  @include iphone() {
+    width: 100%;
+    margin-top: 45px;
   }
 }
