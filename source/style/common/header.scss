@@ -85,6 +85,11 @@
     & a img{
       width: 100px;
     }
+    &.big{
+      & a img{
+        width: 115px;
+      }
+    }
   }
 }
 
