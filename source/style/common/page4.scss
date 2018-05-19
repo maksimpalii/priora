@@ -134,6 +134,9 @@
   @include pc() {
     padding: 70px 0;
   }
+  @include iphone(){
+    padding: 25px 0;
+  }
 }
 
 #block_sred_img {

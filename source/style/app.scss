@@ -65,7 +65,7 @@ a{
     height: 150px;
   }
   @include iphone(){
-    height:100px;
+    height:50px;
   }
 }
 @import 'common/_preloader';

@@ -6,6 +6,7 @@
   background-size: cover;
   @include iphone(){
     padding-top: 55px;
+    padding-bottom: 50px;
   }
 }
 
@@ -429,8 +430,13 @@
   @include pc(){
     padding: 50px 0 70px 0;
   }
+  @include iphone(){
+    padding: 25px 0 ;
+  }
 }
-
+#block_question_inn{
+  overflow: visible;
+}
 .block_question_half {
   width: 50%;
   position: relative;
@@ -455,6 +461,7 @@
   }
   @include iphone(){
     width: 100%;
+    height: 245px;
   }
   & span {
     font-size: 10px;
@@ -492,7 +499,7 @@
       min-height: 455px;
     }
     @include iphone(){
-      min-height: 290px;
+      min-height: 245px;
     }
     & img {
     }
@@ -711,13 +718,21 @@
   }
   &.opacity{
     opacity: 0;
+    @include iphone(){
+      opacity: 1;
+    }
   }
   @include iphone(){
     position: absolute;
     @include centered('y');
   }
 }
-
+.blog_out{
+  @include iphone(){
+    width: 100%;
+    height: 100%;
+  }
+}
 .section-blog__item {
   width: max-content;
   transform: rotateZ(180deg);

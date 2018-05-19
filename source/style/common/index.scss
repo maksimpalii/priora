@@ -5,7 +5,7 @@
   background-size: cover;
   padding: 100px 0 100px 0;
   @include iphone(){
-    padding: 55px 0 100px 0;
+    padding: 55px 0 50px 0;
   }
 }
 
@@ -112,7 +112,9 @@
   text-align: center;
   display: inline-block;
   overflow: hidden;
-
+@include iphone(){
+  padding: 17px 15px;
+}
   & span {
     top: 0;
     position: relative;
@@ -317,7 +319,7 @@
   display: flex;
   padding-bottom: 125px;
   @include iphone() {
-    padding: 50px 0;
+    padding: 25px 0;
   }
 }
 
@@ -415,6 +417,7 @@
   @include iphone() {
     flex-direction: column;
     overflow: visible;
+    padding: 25px 0;
   }
 }
 
@@ -515,9 +518,15 @@
       margin: 35px auto;
       margin-top: 50px;
     }
+    @include iphone(){
+      margin: 20px auto 10px auto;
+    }
   }
   @include pc() {
     padding: 50px 0;
+  }
+  @include iphone(){
+    padding: 25px 0;
   }
 }
 
@@ -552,6 +561,17 @@
       background: #ffe3e8;
       position: relative;
       margin: 30px auto 40px auto;
+    }
+  }
+  @include iphone(){
+    margin: 15px 0;
+    & img{
+      width: 40%;
+    }
+    & p{
+      &:before{
+        margin: 15px auto 15px auto;
+      }
     }
   }
 }
@@ -626,6 +646,7 @@
   }
   @include iphone() {
     overflow: visible;
+    padding: 25px 0;
   }
 }
 
@@ -666,6 +687,9 @@
   .txt {
     color: #295791;
     margin-bottom: 70px;
+    @include iphone(){
+      margin-bottom: 20px;
+    }
   }
   @include iphone() {
     width: 100%;
@@ -684,6 +708,7 @@
   @include iphone() {
     overflow: visible;
     flex-direction: column;
+    padding: 25px 0;
   }
 }
 

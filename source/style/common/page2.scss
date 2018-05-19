@@ -4,6 +4,9 @@
   background-position: top center;
   padding: 140px 0 100px 0;
   background-size: cover;
+  @include iphone(){
+    padding: 25px 0;
+  }
   & h2 {
     font-size: 43px;
     color: #3e5884;
@@ -34,6 +37,11 @@
     }
     @include iphone() {
       width: 100%;
+      padding: 15px 0;
+      margin: 10px 0;
+      & p{
+        margin: 0;
+      }
     }
   }
   .find {
@@ -43,6 +51,9 @@
     width: fit-content;
     @include pc() {
       margin: 70px 0 0 0;
+    }
+    @include iphone(){
+      margin: 25px 0 0 0 ;
     }
   }
   & .swiper-slide {
@@ -72,6 +83,9 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  @include iphone(){
+    margin: 20px auto;
+  }
 }
 
 #block_stadii_items {
@@ -213,6 +227,9 @@
   @include pc() {
     margin: 70px 0 0 0;
   }
+  @include iphone(){
+    margin: 25px 0 0 0;
+  }
 }
 
 #block_lech {
@@ -351,6 +368,7 @@
   }
   @include iphone() {
     width: 100%;
+    margin-top: 25px;
     & .find {
       display: block;
     }

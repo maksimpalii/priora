@@ -184,24 +184,27 @@ $('#gotop').click(function() {
 });
 /* Menu vertical */
 
-var menuBlog = (function () {
-    var container = document.querySelector('.menu-blog-nav');
-    if (container !== null) {
-        var blogmenu = document.querySelector('.section-blog__menu');
-        var menuState = false;
-
-        container.addEventListener('click', function () {
-            if (!menuState) {
-                blogmenu.classList.add('active');
-                menuState = true;
-            }
-            else {
-                blogmenu.classList.remove('active');
-                menuState = false;
-            }
-        });
-    }
-});
+// var menuBlog = (function () {
+//     var container = document.querySelector('.menu-blog-nav');
+//     if (container !== null) {
+//         var blogmenu = document.querySelector('.section-blog__menu');
+//         var menuState = false;
+//
+//         container.addEventListener('click', function () {
+//             if (!menuState) {
+//                 blogmenu.classList.add('active');
+//                 menuState = true;
+//             }
+//             else {
+//                 blogmenu.classList.remove('active');
+//                 menuState = false;
+//             }
+//         });
+//         blogmenu.addEventListener('click', function () {
+//             console.log('click');
+//         });
+//     }
+// });
 var blogscontent = document.querySelector('.section-blog__content');
 if (blogscontent){
     var  menuOffsetTop = $('.section-blog__list').offset().top;
@@ -237,7 +240,7 @@ if (blogscontent){
         $('body,html').animate({scrollTop: topsb}, 1000);
     });
 }
-menuBlog();
+//menuBlog();
 
 if ($(window).width() < 768) {
     var swiper = new Swiper('.swiper-container', {
@@ -252,5 +255,8 @@ $('.menu-mob').click(function () {
     $('.menu-container').toggleClass('active');
 });
 $('.section-blog__menu span').click(function () {
+    $('.section-blog__menu').toggleClass('active');
+});
+$('.blog_out').click(function () {
     $('.section-blog__menu').toggleClass('active');
 });

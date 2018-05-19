@@ -148,6 +148,7 @@
     margin-bottom: 0px;
     @include iphone(){
       font-size: 22px;
+      margin-top: 20px;
     }
   }
   & p {
@@ -212,6 +213,9 @@
     @include iphone(){
       width: calc(100% - 70px);
       padding-left: 70px;
+    }
+    @include iphone(){
+      margin: 25px 0;
     }
   }
   & ul {
@@ -320,6 +324,9 @@
   @include pc() {
     padding: 70px 0;
   }
+  @include iphone(){
+    padding: 25px 0;
+  }
   &:before {
     content: '';
     display: block;
@@ -367,6 +374,7 @@
     display: inline-flex;
     justify-content: center;
     width: calc(100% - 96px);
+    margin-bottom: 25px;
   }
   & span {
     top: 0;
