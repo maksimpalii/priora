@@ -19,6 +19,9 @@
 }
 #footer{
   box-shadow: 0px -10px 50px 0px rgba(0, 0, 0, 0.3);
+  @include iphone(){
+    box-shadow: 0px -5px 30px 0px rgba(0, 0, 0, 0.3);
+  }
 }
 #hw{
   padding: 20px 0;
