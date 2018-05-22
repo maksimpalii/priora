@@ -63,66 +63,59 @@ var preloader = (function () {
 
 // preloader.init();
 
-
 var boxFlip = (function () {
     var button = document.querySelector('.block_sts');
     if (button !== null) {
         CSSPlugin.defaultTransformPerspective = 1000;
+        TweenMax.set($(".answer"), {rotationY: -180}); //we set the backface
 
-//we set the backface
-        TweenMax.set($(".answer"), {rotationY:-180});
-
-        $.each($(".block_sts"), function(i,element)
-        {
+        $.each($(".block_sts"), function (i, element) {
             var frontCard = $(this).children("div.quest"),
                 backCard = $(this).children("div.answer"),
-                tl = new TimelineMax({paused:true});
+                tl = new TimelineMax({paused: true});
 
             tl
-                .to(frontCard, 0.6, {rotationY:180, ease:Linear.easeNone})
-                .to(backCard, 0.6, {rotationY:0, ease:Linear.easeNone},0);
+                .to(frontCard, 0.6, {rotationY: 180, ease: Linear.easeNone})
+                .to(backCard, 0.6, {rotationY: 0, ease: Linear.easeNone}, 0);
 
             element.animation = tl;
         });
 
         var btn = $(".quest_close");
 
-        $(".quest").click(function()
-        {
+        $(".quest").click(function () {
             this.parentElement.animation.play(0);
         });
 
-        btn.click(function()
-        {
+        btn.click(function () {
             this.parentElement.parentElement.animation.reverse();
         });
     }
 });
-
 boxFlip();
 
-$(window).scroll(function() {
+$(window).scroll(function () {
     var $height = $(window).scrollTop();
-    if($height > 50) {
+    if ($height > 50) {
         $('#header').addClass('active');
     } else {
         $('#header').removeClass('active');
     }
-    if($height > 700) {
+    if ($height > 700) {
         $('#gotop').addClass('active');
     } else {
         $('#gotop').removeClass('active');
     }
 });
 
-$(window).load(function() {
+$(window).load(function () {
     var $height = $(window).scrollTop();
-    if($height > 50) {
+    if ($height > 50) {
         $('#header').addClass('active');
     } else {
         $('#header').removeClass('active');
     }
-    if($height > 700) {
+    if ($height > 700) {
         $('#gotop').addClass('active');
     } else {
         $('#gotop').removeClass('active');
@@ -138,46 +131,48 @@ var firstScriptTag = document.getElementsByTagName('script')[0];
 firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
 var player;
+
 function onYouTubeIframeAPIReady() {
     player = new YT.Player('player', {
         height: '100%',
         width: '100%',
         videoId: '611Yy41Rubg',
-        playerVars: { 'autoplay': 0, 'controls': 0 },
+        playerVars: {'autoplay': 0, 'controls': 0},
         events: {
-             'onReady': onPlayerReady
-             //'onStateChange': onPlayerStateChange
+            'onReady': onPlayerReady
+            //'onStateChange': onPlayerStateChange
         }
     });
 }
+
 // https://developers.google.com/youtube/iframe_api_reference?hl=ru#Playback_status
 
 function onPlayerReady() {
     console.log('player dobe');
-    $(window).scroll(function() {
+    $(window).scroll(function () {
         var $height = $(window).scrollTop();
         var vidoffset = $("#block_video").offset().top - 150;
-        var vidheight =  $("#block_video").height();
-        if($height > vidoffset && $height < vidoffset + vidheight ) {
+        var vidheight = $("#block_video").height();
+        if ($height > vidoffset && $height < vidoffset + vidheight) {
             player.playVideo();
         }
-        else{
+        else {
             player.pauseVideo();
         }
     });
 }
 
 
-$('#icon_vid').click(function() {
-$('html, body').animate({
-    scrollTop: $("#block_video").offset().top
-}, 1000);
-       player.playVideo();
+$('#icon_vid').click(function () {
+    $('html, body').animate({
+        scrollTop: $("#block_video").offset().top
+    }, 1000);
+    player.playVideo();
 
 });
 
 /* Scroll Top */
-$('#gotop').click(function() {
+$('#gotop').click(function () {
     $('html, body').animate({
         scrollTop: 0
     }, 1000);
@@ -206,23 +201,23 @@ $('#gotop').click(function() {
 //     }
 // });
 var blogscontent = document.querySelector('.section-blog__content');
-if (blogscontent){
-    var  menuOffsetTop = $('.section-blog__list').offset().top;
-    var  menuOffsetTop2 = $('#footer').offset().top - $('#footer').height();
+if (blogscontent) {
+    var menuOffsetTop = $('.section-blog__list').offset().top;
+    var menuOffsetTop2 = $('#footer').offset().top - $('#footer').height();
     $(document).scroll(function () {
-        if ($(document).scrollTop() >= (menuOffsetTop - 100) && $(window).width() > 753){
+        if ($(document).scrollTop() >= (menuOffsetTop - 100) && $(window).width() > 753) {
             $('.section-blog__list').addClass('fixed-position');
         } else {
             $('.section-blog__list').removeClass('fixed-position');
         }
-        if ($(document).scrollTop() >= menuOffsetTop2 - 200){
+        if ($(document).scrollTop() >= menuOffsetTop2 + 100) {
             $('.section-blog__list').addClass('opacity');
         } else {
             $('.section-blog__list').removeClass('opacity');
         }
 
         $(".section-blog__post").each(function () {
-            if (($(document).scrollTop() - $(this).offset().top) >= -150){
+            if (($(document).scrollTop() - $(this).offset().top) >= -150) {
                 $(".section-blog__item").each(function () {
                     $(this).removeClass('section-blog__item--active');
 
@@ -235,12 +230,21 @@ if (blogscontent){
 
     $(".articles__link").on("click", function (event) {
         event.preventDefault();
-        var ids  = $(this).attr('href'),
-            topsb = $(ids).offset().top -100;
+        var ids = $(this).attr('href'),
+            topsb = $(ids).offset().top - 100;
         $('body,html').animate({scrollTop: topsb}, 1000);
     });
 }
 //menuBlog();
+
+$(window).load(function () {
+    var hashtag = window.location.hash;
+    if ($(hashtag).length > 0) {
+        var hashth = $(hashtag).offset().top - 150;
+        $('body,html').scrollTop(hashth);
+    }
+});
+
 
 if ($(window).width() < 768) {
     var swiper = new Swiper('.swiper-container', {
@@ -251,7 +255,7 @@ if ($(window).width() < 768) {
 }
 
 $('.menu-mob').click(function () {
-   $(this).toggleClass('active');
+    $(this).toggleClass('active');
     $('.menu-container').toggleClass('active');
 });
 $('.section-blog__menu span').click(function () {

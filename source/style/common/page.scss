@@ -141,6 +141,18 @@
 }
 
 #block_content {
+  & h1 {
+    font-size: 43px;
+    color: #3e5884;
+    text-transform: uppercase;
+    margin: 20px 0;
+    @include pc() {
+      font-size: 33px;
+    }
+    @include iphone() {
+      font-size: 22px;
+    }
+  }
   & h2 {
     font-size: 24px;
     color: #f9aec5;
@@ -412,7 +424,10 @@
   }
 }
 #mapgeo{
-  margin-top: 30px;
+  margin-top: 50px;
+}
+iframe .balloon-wrapper .balloon-content {
+  border: 3px solid #3d5884;
 }
 #dop_links_left {
   width: 280px;
