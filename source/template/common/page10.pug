@@ -1,0 +1,26 @@
+block content
+include header.pug
+
+#wrapper
+    #block_header
+        #block_header_inn.wrap
+            #block_header_content
+                #block_header_img
+                    #block_header_img__inn
+                        img(src='/assets/img/wb.jpg')
+                    #block_header_img_dis.middle
+                        img(src='/assets/img/hedaer_block_dis.png')
+                h1 Где купить
+                .head_txt
+                    p Краткое описание для данной страницы.
+                    p К примеру: тут вы можете найти ближайшие аптеки где можно приобрести "Приору"
+                #block_header_content_dis
+                    img(src='/assets/img/header_content_dis.png')
+    #block_content
+        #block_content_inn.wrap
+            a.back(href='/')
+                span вернуться
+            #mapgeo
+                iframe#frame(style='width: 100%;height: 600px; border: none;', src='http://geoapteka.com.ua/net/omnifarma?brand=ПРИОРА, Дельта Медикел&full=1&search=1&back=fff&filter=1&choice=1', scrolling='no')
+
+include footer.pug

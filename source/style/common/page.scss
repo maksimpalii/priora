@@ -320,7 +320,7 @@
 
 #block_content_inn {
   position: relative;
-  padding: 140px 0;
+  padding: 100px 0;
   @include pc() {
     padding: 70px 0;
   }
@@ -365,7 +365,7 @@
   display: flex;
   width: fit-content;
   overflow: hidden;
-  margin-bottom: 90px;
+  margin-bottom: 45px;
   display: inline-flex;
   @include pc() {
     margin-bottom: 45px;
@@ -401,12 +401,19 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin: 80px 0;
+  margin: 50px 0;
   @include iphone(){
     flex-direction: column;
   }
 }
-
+.find{
+  &.instr{
+    margin-top: 30px;
+  }
+}
+#mapgeo{
+  margin-top: 30px;
+}
 #dop_links_left {
   width: 280px;
   & h3 {
