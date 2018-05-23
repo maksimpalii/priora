@@ -11,6 +11,7 @@
   @include iphone() {
     min-height: auto;
     padding: 80px 0 50px 0;
+    overflow: hidden;
   }
 }
 
@@ -416,11 +417,15 @@
   margin: 50px 0;
   @include iphone(){
     flex-direction: column;
+    margin: 25px 0;
   }
 }
 .find{
   &.instr{
     margin-top: 30px;
+    @include iphone(){
+      display: block;
+    }
   }
 }
 #mapgeo{

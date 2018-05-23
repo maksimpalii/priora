@@ -2,7 +2,7 @@
   background-image: url('/assets/img/gerpes_bg.jpg');
   background-repeat: no-repeat;
   background-position: top center;
-  padding: 140px 0 100px 0;
+  padding: 100px 0 100px 0;
   background-size: cover;
   @include iphone(){
     padding: 25px 0;
@@ -79,7 +79,7 @@
 }
 
 #block_stadii_inn {
-  margin: 60px auto;
+  margin: 0px auto;
   display: flex;
   flex-direction: column;
   align-items: center;

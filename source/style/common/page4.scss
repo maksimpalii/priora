@@ -216,6 +216,8 @@
 #block_clin_content {
   width: 49%;
   float: right;
+  position: relative;
+  z-index: 1;
   & h2 {
     font-size: 60px;
     color: #295791;
@@ -250,9 +252,21 @@
   position: absolute;
   top: 0;
   left: 75px;
+  z-index: 0;
   @include pc() {
     @include centered();
     top: 66%;
     left: 75%;
+  }
+  @include iphone(){
+    top:50%;
+    left: 50%;
+    width: 100%;
+    height:100%;
+  }
+  & img{
+    @include iphone(){
+      width: 100%;
+    }
   }
 }

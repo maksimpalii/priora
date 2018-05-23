@@ -202,6 +202,9 @@
   @include pc() {
     margin: 10px 0;
   }
+  @include iphone(){
+    display: block;
+  }
 }
 
 #block_1_buttons .more {
@@ -663,13 +666,14 @@
       height: 65%;
     }
     @include iphone() {
-      right: 35%;
+      right: 50%;
     }
   }
   @include iphone() {
     position: absolute;
     width: 100%;
     z-index: 0;
+    height: 140%;
   }
 }
 
